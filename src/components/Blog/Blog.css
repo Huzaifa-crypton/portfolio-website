@@ -1,0 +1,47 @@
+.blogBody{
+
+    padding: 50px 0
+}
+.blogBody>img{
+    object-fit: contain;
+    height: 40vh;
+    width: 100%;
+    background-color:transparent;
+
+
+}
+.blogContent{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10%;
+    /* transition: all 1ms ease-in-out; */
+}
+.blogContent > h1{
+    text-align: center;
+}
+.blogContent > h1:hover{
+    color:goldenrod;
+    cursor: pointer;
+    -webkit-transition: color 0.2s ease-out;
+    -moz-transition: color 0.2s ease-out;
+    -o-transition: color 0.2s ease-out;
+    transition:color 0.2s ease-out;
+
+}
+.blogContent > h5{
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+.blogContent>h5>a{
+    text-decoration:none;
+    color: darkgoldenrod;
+    margin-left: 10px;
+}
+
+@media (max-width: 400px){
+    .blogContent > h1{
+        font-size: 1.6rem;
+    }   
+}

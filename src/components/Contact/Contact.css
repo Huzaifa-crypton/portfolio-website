@@ -1,0 +1,19 @@
+.contact_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    justify-content: flex-start;
+}
+.labels,.inputs{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contact_item:hover {
+    box-shadow: 0 0 30px rgba(33,33,33,.2); 
+  }
