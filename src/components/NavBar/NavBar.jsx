@@ -1,51 +1,11 @@
-// import React from "react";
 import "./NavBar.css"
 import logo from "../../images/Huzaifa.png";
 import Link from '@mui/material/Link';
-// const NavBar = () => {
-//   const { window } = props;
-//   const [mobileOpen, setMobileOpen] = React.useState(false);
-
-//   const handleDrawerToggle = () => {
-//     setMobileOpen((prevState) => !prevState);
-//   };
-
-//   const drawer = (
-//     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-//       <List>
-//         {navItems.map((item) => (
-//           <ListItem key={item} disablePadding>
-//             <ListItemButton sx={{ textAlign: 'center' }}>
-//               <ListItemText primary={item} />
-//             </ListItemButton>
-//           </ListItem>
-//         ))}
-//       </List>
-//     </Box>
-//   );
-//   return(
-//     <nav className="nav">
-
-//       {/* <Link href="/home">Muhammad Huzaifa Khan</Link> */}
-//       <img src = {logo} className="logo" alt="huzaifa_logo"></img>
-//       <i className="fa-solid fa-bars"></i>
-//       <div className="nav-links">
-//         <Link href="#home">Home</Link>
-//         <Link href="https://www.educative.io/profile/view/4559692215615488">Blogs</Link>
-//         <Link href="#projects">Projects</Link>
-//         <Link href="#contact">Contact</Link>
-//       </div>
-//     </nav>
-//   )
-// };
-
-// export default NavBar;
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
@@ -54,8 +14,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
 const navItems = { 'Home': "#home", "Projects": "#project", 'Blogs': "https://www.educative.io/profile/view/4559692215615488", 'Contact': "#contact" };
@@ -74,7 +32,14 @@ function DrawerAppBar(props) {
         {Object.keys(navItems).map(key => (
           <ListItem key={key} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={key} />
+              {/* <ListItemText primary={key} /> */}
+              <a className="menu" href={navItems[key]}
+                sx={{
+                  height: "30px", fontWeight: "bold", marginLeft: "5rem", marginInlineStart: "20px", textDecoration: "none", color: "rgb(106, 119, 138)", transition: "color .75s"
+                }}
+              >
+                {key}
+              </a>
             </ListItemButton>
           </ListItem>
         ))}
@@ -104,9 +69,13 @@ function DrawerAppBar(props) {
           </IconButton>
           <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: "center", alignItems: "center" }}>
             {Object.keys(navItems).map(key => (
-              <Link href={navItems[key]} sx={{ height: "30px", fontWeight: "bold", textDecoration: "none", marginLeft: "5rem", marginInlineStart: "20px", textDecoration: "none", color: "rgb(106, 119, 138)", transition: "color .75s" }} >
+              <a className="menu" href={navItems[key]}
+                sx={{
+                  height: "30px", fontWeight: "bold", marginLeft: "5rem", marginInlineStart: "20px", textDecoration: "none", color: "rgb(106, 119, 138)", transition: "color .75s"
+                }}
+              >
                 {key}
-              </Link>
+              </a>
             ))}
 
           </Box>
@@ -123,7 +92,7 @@ function DrawerAppBar(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', sm: 'none' }, position: 'absolute',
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
