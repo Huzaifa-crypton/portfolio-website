@@ -2,12 +2,17 @@ import express from "express";
 const router = express.Router();
 import cors from "cors";
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
 
+dotenv.config();
 const contactEmail = nodemailer.createTransport({
-  service: "gmail",
+  pool: true,
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
-    user: "huzaifa18072002@gmail.com",
-    pass: "MuhammadHuzaifaKhan18072002",
+    user: process.env.EMAIL_USER, 
+    pass: process.env.EMAIL_PASS,
   },
 });
 
@@ -23,17 +28,20 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
+router.get("/", (req, res) => {
+  res.send("Hello");
+});
 router.post("/contact", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
   const mail = {
-    from: name,
-    to: "***************@gmail.com",
+    from: "Portfolio Website",
+    to: process.env.EMAIL_USER,
     subject: "Contact Form Submission",
-    html: `<p>Name: ${name}</p>
-             <p>Email: ${email}</p>
-             <p>Message: ${message}</p>`,
+    html: `<p><b>Name</b>: ${name}</p>
+             <p><b>Email</b>: ${email}</p>
+             <p><b>Message</b>: ${message}</p>`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
