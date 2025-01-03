@@ -1,6 +1,5 @@
 import "./NavBar.css"
 import logo from "../../images/Huzaifa.png";
-import Link from '@mui/material/Link';
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
@@ -11,7 +10,6 @@ import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 
@@ -35,8 +33,7 @@ function DrawerAppBar(props) {
               {/* <ListItemText primary={key} /> */}
               <a className="menu" href={navItems[key]}
                 sx={{
-                  height: "30px", fontWeight: "bold", marginLeft: "5rem", marginInlineStart: "20px", textDecoration: "none", color: "rgb(106, 119, 138)", transition: "color .75s"
-                }}
+                  }}
               >
                 {key}
               </a>
@@ -73,13 +70,6 @@ function DrawerAppBar(props) {
             className="menu" 
             href={navItems[key]}
             sx={{
-              height: "30px", 
-              fontWeight: "bold", 
-              marginLeft: "5rem", 
-              marginInlineStart: "20px", 
-              textDecoration: "none", 
-              color: "rgb(106, 119, 138)", 
-              transition: "color .75s"
             }}
           >
             {key}

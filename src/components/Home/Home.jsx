@@ -9,16 +9,16 @@ const Home = ({ landscape }) => {
   return (
     <Box>
       <Grid spacing={3} container sx={{ marginY: "90px" }} justifyContent={"center"}>
-        <Grid item lg={5} md={5} sm={10} xs={10} style={{ paddingTop: '0', marginTop: "10px" }}>
+        <Grid item lg={7} md={7} sm={10} xs={10} style={{ paddingTop: '0', marginTop: "10px" }}>
           <Fade direction="left" triggerOnce={true}>
 
             <Box className="main_panel">
-              <Typography variant='h4'>Hi, I'm <strong>Muhammad Huzaifa Khan</strong>🙋‍♂️</Typography>
+              <Typography variant='h4'>Hi, I'm <strong>Huzaifa</strong>🙋‍♂️</Typography>
               <br />
 
               <Typography variant='h5' color="rgb(237, 177, 11)">
                 <TypeAnimation
-                  sequence={["Software Developer", 100, "Published Author", 100, "Computer Science Student", 100]}
+                  sequence={["Software Engineer", 100, "Published Author", 100, "Computer Scientist", 100]}
                   wrapper="span"
                   speed={20}
                   deletionSpeed={20}
@@ -33,7 +33,7 @@ const Home = ({ landscape }) => {
             </Box>
           </Fade>
         </Grid>
-        <Grid item lg={3} md={3} sm={10} xs={10} justifyContent={"center"} style={{ paddingTop: '0', marginTop: "10px" }}>
+        <Grid item lg={3} md={2} sm={10} xs={10} justifyContent={"center"} style={{ paddingTop: '0', marginTop: "10px" }}>
           <Fade direction="right" triggerOnce={true}>
             <Box className='main_image' display={"flex"} justifyContent={"center"}>
               <img loading='lazy' src={image} alt="" className={`myImage`} />

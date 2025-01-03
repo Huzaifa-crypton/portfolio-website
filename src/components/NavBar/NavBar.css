@@ -5,15 +5,14 @@
 }
 
 .menu {
-    font-weight: bold;
     text-decoration: none;
     margin-left: 5rem;
     margin-inline-start: 20px;
     text-decoration: none;
-    color: rgb(106, 119, 138);
-    transition: color .75s;
+    color: rgb(90, 90, 90);
+    transition: color .25s;
 }
 
 .menu:hover {
-    color: rgb(255, 196, 17)
+    color: rgb(255, 191, 0)
 }

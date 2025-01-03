@@ -1,14 +1,8 @@
 import React from 'react'
 import "./Contact.css"
-import { Box, Paper, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import Whatsapp from "../../images/Whatsapp.png";
-import Resume from "../../images/resume.png";
-import Gmail from "../../images/gmail.png";
 import { Fade } from "react-awesome-reveal";
-import Linedin from "../../images/Linkedin.png";
-import Person from "../../images/contact_illustration.png"
-import PDF from "../../files/Muhammad_Huzaifa_Khan_Latest_Resume.pdf"
 import Socials from './Socials/Socials';
 import ContactForm from './Form/ContactForm';
 const Contact = () => {
@@ -32,7 +26,7 @@ const Contact = () => {
                             }>
                                 &nbsp;Project&nbsp;
                             </span>
-                                or a 
+                                or 
                                 <span style={
                                 { color: "rgb(237, 177, 11)" }
                             }>
@@ -53,10 +47,10 @@ const Contact = () => {
                         </Typography>
                     </Grid>
                     <Grid item
-                        xs={12} md={3}>
+                        xs={12} md={4}>
                         <Socials />
                     </Grid>
-                    <Grid item xs={0} md={3} display={"flex"} justifyContent="start">
+                    <Grid item md={5} display={"flex"} justifyContent="start">
                         <ContactForm></ContactForm>
                     </Grid>
                 </Grid>
