@@ -55,7 +55,7 @@ function DrawerAppBar(props) {
       <AppBar component="nav" sx={{
         justifyContent: 'center',
         height: "70px",
-        backgroundColor: "rgba(255, 255, 255, 0.26)",
+        backgroundColor: "rgba(255, 255, 255, 0.08)",
         backdropFilter: "blur(3px)",
         overflow: "hidden",
       }}>
