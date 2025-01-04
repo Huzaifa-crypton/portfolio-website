@@ -9,14 +9,11 @@ const Contact = () => {
     return (
         <Fade direction='up' triggerOnce={true}>
             <Grid container
-                rowSpacing={3}
                 padding={0}
                 className='contact_section' justifyContent={"center"}>
                 <Grid
                     item
-                    xs={12}
-                    sx={{
-                    }}
+                    xs={11}
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
@@ -28,28 +25,28 @@ const Contact = () => {
                         color="whitesmoke"   
                         lineHeight={1}
                     >
-                        Have a
+                        Have a {""}
                         <span
                             style={{
                                 color: "rgb(237, 177, 11)",
                             }}
                         >
-                            &nbsp;Project&nbsp;
+                            Project
                         </span>
-                        or
+                        {" "}or {" "}
                         <span
                             style={{
                                 color: "rgb(237, 177, 11)",
                             }}
                         >
-                            &nbsp;Question&nbsp;
+                            Question{" "}
                         </span>
                         for me?
                     </Typography>
                 </Grid>
 
                 <Grid item
-                    xs={12}
+                    xs={11}
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
@@ -60,11 +57,11 @@ const Contact = () => {
                 </Grid>
                 <Grid container display={"flex"} justifyContent={"center"} sx={{padding:0, margin:0, marginTop:2}} spacing={3}>
                     <Grid item justifyContent={"center"} sx={{padding:0, margin:0}}
-                        xs={10} md={4} >
+                        xs={11} md={4} >
                         <Socials />
                     </Grid>
                     <Grid item justifyContent={"center"}  sx={{padding:0, margin:0}}
-                        xs={10} md={4}>
+                        xs={11} md={4}>
                         <ContactForm />
                     </Grid>
                 </Grid>

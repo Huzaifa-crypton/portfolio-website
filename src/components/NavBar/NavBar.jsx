@@ -1,4 +1,4 @@
-import "./NavBar.css"
+import "./NavBar.css";
 import logo from "../../images/MuhammadHuzaifaKhan.jpeg";
 import * as React from 'react';
 import PropTypes from 'prop-types';
@@ -12,29 +12,31 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import {Chip, Avatar, Typography } from "@mui/material";
+import { Chip, Avatar } from "@mui/material";
 
 const drawerWidth = 240;
-const navItems = { 'Home': "#home", "Projects": "#project", 'Blogs': "https://www.educative.io/profile/view/4559692215615488", 'Contact': "#contact" };
+const navItems = { 'Home': "/", "Projects": "#project", 'Blogs': "https://www.educative.io/profile/view/4559692215615488", 'Contact': "#contact" };
 
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    console.log("prevState", mobileOpen);
+    setMobileOpen(prevState => !prevState); // Toggle drawer visibility
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box // Close the drawer when a link is clicked
+      sx={{ textAlign: 'center', overflow: 'hidden', backgroundColor: "rgba(0, 0, 0, 0)" }}
+    >
       <List>
-        {Object.keys(navItems).map(key => (
+        {Object.keys(navItems).map((key) => (
           <ListItem key={key} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              {/* <ListItemText primary={key} /> */}
-              <a className="menu" href={navItems[key]}
-                sx={{
-                }}
+            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => handleDrawerToggle()}>
+              <a
+                className="menu"
+                href={navItems[key]} // Close the drawer on link click
               >
                 {key}
               </a>
@@ -48,13 +50,30 @@ function DrawerAppBar(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', maxWidth: "100vw", overflow: "hidden", justifyContent: 'start' }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ justifyContent: 'center', height: "70px", backgroundColor: "rgba(58, 58, 58, 0.32)", backdropFilter: "blur(3px)", boxShadow: 'none', paddingLeft: { xs: "none", sm: "30px" }, paddingRight: { xs: "none", sm: "50px" } }}>
-        <Toolbar>
-          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+      <AppBar component="nav" sx={{
+        justifyContent: 'center',
+        height: "70px",
+        backgroundColor: "rgba(255, 255, 255, 0.26)",
+        backdropFilter: "blur(3px)",
+        overflow: "hidden",
+      }}>
+        <Toolbar sx={{
+          display: 'flex',
+          alignItems: 'center',
+          maxWidth: "100vw",
+          overflow: "hidden",
+        }}>
+          <Box sx={{
+            display: 'flex',
+            alignItems: 'center',
+            maxWidth: "100vw",
+            flexGrow: 1,
+            overflow: "hidden",
+          }}>
             <Chip
-              avatar={<Avatar alt="Natacha" src={logo} sx={{height:'50px', width:"50px"}} />}
+              avatar={<Avatar alt="Natacha" src={logo} sx={{ height: '50px', width: "50px" }} />}
               label="Huzaifa"
               variant="outlined"
               href="/"
@@ -75,21 +94,18 @@ function DrawerAppBar(props) {
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            edge="start"
-
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ display: { sm: 'none' } }} // Show only on small screens
           >
             <MenuIcon sx={{ color: 'whitesmoke' }} />
-          </IconButton> 
+          </IconButton>
           <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: "center", alignItems: "center" }}>
             {Object.keys(navItems).map((key, index) => (
               <a
-                key={index}  // Ensure each element has a unique key. Here we use index for simplicity
+                key={index}
                 className="menu"
                 href={navItems[key]}
-                sx={{
-                }}
+                onClick={() => handleDrawerToggle()} // Close the drawer on link click
               >
                 {key}
               </a>
@@ -103,28 +119,29 @@ function DrawerAppBar(props) {
           variant="temporary"
           anchor={"right"}
           open={mobileOpen}
-          onClose={handleDrawerToggle}
+          onClose={() => handleDrawerToggle()} // Close the drawer on close
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' }, position: 'absolute',
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+              maxHeight: "100vh",
+              overflow: "auto",
+              backgroundColor: "rgba(255, 255, 255, 0.07)",
+              backdropFilter: "blur(2px)",
+            }
           }}
         >
           {drawer}
         </Drawer>
       </nav>
     </Box>
-
   );
 }
 
 DrawerAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 

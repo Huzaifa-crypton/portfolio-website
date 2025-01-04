@@ -19,12 +19,6 @@ function App() {
       <section id="contact" className="contact" style={{paddingTop: '50px'}}>
         <Contact></Contact>
       </section>
-      <div className="main_page">
-        {/* <Routes>
-        <Route path="/" element={<Home landscape= {true}></Home> } />
-        <Route path="/blogs" element={ <Blogs></Blogs> } />
-        </Routes> */}
-      </div>
       <Footer></Footer>
     </div>
   );
