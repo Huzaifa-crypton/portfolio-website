@@ -2,6 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+
+}
+.contact_list{
+    background-color:rgba(255, 255, 255, 0.1);
+    padding-bottom: 30px;
+    border-radius: 8px;
 }
 .contact_item:hover {
     box-shadow: 0 0 30px rgba(33,33,33,.2); 

@@ -9,10 +9,10 @@
     margin-left: 5rem;
     margin-inline-start: 20px;
     text-decoration: none;
-    color: rgb(90, 90, 90);
-    transition: color .25s;
+    color: rgb(153, 153, 153);
+    transition: color .05s;
 }
 
 .menu:hover {
-    color: rgb(255, 191, 0)
+    color: rgba(255, 191, 0, 0.486)
 }

@@ -3,14 +3,12 @@ import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Contact from "./components/Contact/Contact";
-// import Skills from "./components/Skills/Skills";
-// import Project from "./components/Projects/Project";
 function App() {
   return (
     <div className="container">
       <NavBar></NavBar>
       <section id="home" className="landing_section">
-        <Home landscape={true}></Home>
+        <Home></Home>
       </section>
       <section id="skills" className="skills">
         {/* <Skills></Skills> */}
@@ -18,7 +16,7 @@ function App() {
       <section id="portfolio" className="portfolio">
         {/* <Project></Project> */}
       </section>
-      <section id="contact" className="contact">
+      <section id="contact" className="contact" style={{paddingTop: '50px'}}>
         <Contact></Contact>
       </section>
       <div className="main_page">

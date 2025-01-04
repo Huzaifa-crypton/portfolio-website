@@ -1,5 +1,16 @@
 body {
     min-height: 100%;
     overflow-x: hidden;
-    background-color: rgb(237, 242, 248);
+    background-color: rgb(0, 0, 0) !important;
 }
+section {
+    min-height: 100vh;
+}
+
+section:empty {
+    min-height: auto;
+}
+html {
+    scroll-behavior: auto;
+}
+  
