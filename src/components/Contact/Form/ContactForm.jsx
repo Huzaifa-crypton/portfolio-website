@@ -194,8 +194,8 @@ const ContactForm = () => {
                                 Send Message
                             </Button>
 
-                            {isSubmitted && (
-                                <div className="success-message" style={{ color: '#ffc70f', fontSize: '18px', marginTop: '10px' }}>
+                            { (
+                                <div className="" style={{visibility:(!isSubmitted?'hidden':""), color: '#ffc70f', fontSize: '18px', marginTop: '10px' }}>
                                     Message Sent Successfully!
                                 </div>
                             )}
