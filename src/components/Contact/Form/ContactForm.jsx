@@ -35,19 +35,20 @@ const ContactForm = () => {
             <Paper
                 elevation={3}
                 sx={{
-                    padding: '20px',
+                    paddingLeft:"0px",
                     borderRadius: '8px',
                     margin:0,
                     position: 'relative',
-                    backgroundColor: "rgba(255, 255, 255, 0.1)"
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    paddingBottom:"20px",
                 }}
                 className="contact-form"
             >
 
                 <form  onSubmit={handleSubmit} style={{ fontFamily: 'Poppins', margin:0, padding:0 }}>
                 {isSubmitted && <ReactConfetti recycle={false} height={300} onConfettiComplete={() => {setIsSubmitted(false);reset()}} />}
-                    <Grid container spacing={3} display="flex" direction="row" alignItems="center"  sx={{padding:"0", margin:0}}>
-                        <Grid item xs={12}>
+                    <Grid container spacing={3} rowGap={3} display="flex" direction="row" alignItems="center"  sx={{padding:"20px", margin:'0px'}}>
+                        <Grid item xs={12} style={{padding:'0px', margin:'0px' }}>
                             <TextField
                                 label="Name"
                                 variant="outlined"
@@ -87,7 +88,7 @@ const ContactForm = () => {
                                 }}
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={12} style={{padding:'0px', margin:'0px' }}>
                             <TextField
                                 label="Email"
                                 variant="outlined"
@@ -128,7 +129,7 @@ const ContactForm = () => {
                                 }}
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={12} style={{padding:'0px', margin:'0px' }}>
                             <TextField
                                 label="Message"
                                 variant="outlined"
@@ -175,7 +176,7 @@ const ContactForm = () => {
                             field="message"
                             errors={state.errors}
                         />
-                        <Grid item xs={12}>
+                        <Grid item xs={12} style={{padding:'0px', margin:'0px' }}>
                             <Button
                                 type="submit"
                                 disabled={state.submitting}

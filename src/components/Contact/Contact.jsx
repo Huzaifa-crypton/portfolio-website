@@ -19,11 +19,7 @@ const Contact = () => {
                     alignItems="center"
                     padding={2}
                 >
-                    <Typography
-                        variant="h3"
-                        textAlign="center"// Responsive font size
-                        color="whitesmoke"   
-                        lineHeight={1}
+                    <Typography margin={0} lineHeight={1} textAlign="center" variant="h1" fontSize={"2.8rem"} fontWeight="bold" sx={{ marginTop: '0px', color: 'whitesmoke' }}
                     >
                         Have a {""}
                         <span
@@ -55,12 +51,12 @@ const Contact = () => {
                         I'd love to hear from you! Feel free to reach out to me with any inquiries
                     </Typography>
                 </Grid>
-                <Grid container display={"flex"} justifyContent={"center"} sx={{padding:0, margin:0, marginTop:2}} spacing={3}>
-                    <Grid item justifyContent={"center"} sx={{padding:0, margin:0}}
+                <Grid container display={"flex"} justifyContent={"center"} sx={{ padding: 0, margin: 0, marginTop: 2 }} spacing={3}>
+                    <Grid item justifyContent={"center"} sx={{ padding: 0, margin: 0 }}
                         xs={11} md={4} >
                         <Socials />
                     </Grid>
-                    <Grid item justifyContent={"center"}  sx={{padding:0, margin:0}}
+                    <Grid item justifyContent={"center"} sx={{ padding: 0, margin: 0 }}
                         xs={11} md={4}>
                         <ContactForm />
                     </Grid>

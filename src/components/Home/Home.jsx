@@ -17,31 +17,29 @@ const Home = () => {
   };
   return (
     <Box
-      sx={{
-        minHeight: "100vh", // Full height of the viewport
-        position: "relative",
-        padding: "10px",
+      sx={{ // Full height of the viewport
         display: "flex", // Flexbox layout
         justifyContent: "center", // Center the content horizontally
         overflow: "hidden", // Ensures content doesn't exceed the box boundaries
         backdropFilter: "blur(70px)", // Blur effect for the content insid
+        alignItems:"center",
         "::before": {
           content: '""',
           position: "absolute",
-          top: 0,
-          left: 0,
           width: "100%",
+          boxSizing:'border-box',
           height: "100%",
           backgroundImage: `url(${image})`, // Combine black overlay and image
-          backgroundSize: "contain",
+          backgroundSize: "20% 50%",
           backgroundRepeat: "repeat",
           zIndex: -1,
-          opacity: 0.09,
+          transform: "skewX(0deg) skewY(0deg) rotate(20deg) translateZ(10)",
+          opacity: 0.1,
         },
       }}
     >
 
-      <Grid container sx={{ marginTop: '80px', }} justifyContent={"center"} alignItems={"center"} gap={0} spacing={2}>
+      <Grid container sx={{marginTop:"90px",}} display={"flex"} justifyContent={"center"} alignItems={"center"} gap={0} spacing={2}>
         {/* Chip */}
         <Grid item xs={11} margin={0} padding={0} display={"flex"} justifyContent={"center"} alignItems={"center"}>
           <Chip
@@ -60,8 +58,8 @@ const Home = () => {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={11} marginTop={0} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-          <Typography margin={0} lineHeight={1} textAlign="center" variant="h2" fontSize={"3rem"} fontWeight="bold" sx={{ marginTop: '0px', color: 'whitesmoke' }}>
+        <Grid item xs={11} md={8} marginTop={0} display={"flex"} justifyContent={"center"} alignItems={"center"}>
+          <Typography margin={0} lineHeight={1} textAlign="center" variant="h1" fontSize={"3.2rem"} fontWeight="bold" sx={{ marginTop: '0px', color: 'whitesmoke' }}>
             Crafting{' '}
             <Box component="span" sx={{ marginTop: "0px", color: "rgb(177, 133, 14)" }}>
               Enterprise Solutions
@@ -71,7 +69,7 @@ const Home = () => {
 
         </Grid>
         <Grid item xs={11} display={"flex"} sx={{ margin: '0px', padding: '0px' }} margin={0} padding={0} justifyContent={"center"} alignItems={"center"}>
-          <Typography margin={0} lineHeight={1} textAlign={'center'} padding={0} sx={{ margin: '0px', padding: '0px' }} variant="body1" color="rgb(143, 143, 143)">
+          <Typography margin={0} lineHeight={1} textAlign={'center'} padding={0} sx={{ margin: '0px', padding: '0px' }} variant="h6" fontSize={"1.3rem"} color="rgb(143, 143, 143)">
             Engineering dynamic, user-centric, and scalable solutions.
           </Typography>
         </Grid>
@@ -83,6 +81,10 @@ const Home = () => {
               borderRadius: '50px',
               boxShadow: '0px 0px 10px 1px rgb(177, 133, 14)',
               backgroundColor: "rgb(177, 133, 14)",
+              padding:1,
+              fontSize:'0.8rem',
+              fontFamily:"Roboto, Helvetica, Arial, sans-serif",
+              width:"200px",
               color: "whitesmoke",
               "&:hover": {
                 backgroundColor: "rgb(150, 113, 12)", // Darker shade on hover
@@ -102,6 +104,10 @@ const Home = () => {
               boxShadow: '0px 0px 10px 1px rgb(177, 133, 14)',
               backgroundColor: "rgb(177, 133, 14)",
               color: "whitesmoke",
+              padding:1,
+              fontFamily:"Roboto, Helvetica, Arial, sans-serif",
+              fontSize:'0.8rem',
+              width:"200px",
               "&:hover": {
                 backgroundColor: "rgb(150, 113, 12)", // Darker shade on hover
               }
@@ -112,7 +118,7 @@ const Home = () => {
 
         </Grid>
         {/* Slider */}
-        <Grid item xs={11} display={"flex"} justifyContent={"center"} alignItems={"center"}>
+        <Grid marginTop={5} item xs={11} display={"flex"} justifyContent={"center"} alignItems={"center"}>
           <Box sx={{ width: "100%" }}>
             <Slider {...settings}>
               {[
