@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, TextField, Button, Paper } from '@mui/material';
+import { Grid, TextField, Button, Paper, Typography } from '@mui/material';
 import ReactConfetti from 'react-confetti';
 import './ContactForm.css';
 import { useForm, ValidationError } from '@formspree/react';
@@ -35,19 +35,18 @@ const ContactForm = () => {
             <Paper
                 elevation={3}
                 sx={{
-                    paddingLeft:"0px",
                     borderRadius: '8px',
-                    margin:0,
                     position: 'relative',
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                    paddingBottom:"20px",
+                    backgroundColor: "rgba(255, 255, 255, 0.1)"
                 }}
                 className="contact-form"
             >
-
                 <form  onSubmit={handleSubmit} style={{ fontFamily: 'Poppins', margin:0, padding:0 }}>
                 {isSubmitted && <ReactConfetti recycle={false} height={300} onConfettiComplete={() => {setIsSubmitted(false);reset()}} />}
-                    <Grid container spacing={3} rowGap={3} display="flex" direction="row" alignItems="center"  sx={{padding:"20px", margin:'0px'}}>
+                    <Grid container spacing={3} rowGap={3} display="flex" direction="row" alignItems="center"  style={{padding:"20px",margin:0}}>
+                    <Grid item xs={12} style={{padding:'0px', margin:'0px' }}>
+                        <Typography variant='h6' color='grey' textAlign={"center"}>💬 Leave a message</Typography>
+                    </Grid>
                         <Grid item xs={12} style={{padding:'0px', margin:'0px' }}>
                             <TextField
                                 label="Name"

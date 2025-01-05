@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <Grid container spacing={4} marginTop={1} marginBottom={1} marginLeft={5} marginRight={1} justifyContent={"center"}>  {/* Complete Footer Container */}
+      <Grid container spacing={4} justifyContent={"center"} style={{paddingLeft:0,marginLeft:0}}>  {/* Complete Footer Container */}
         <Grid item xs={12} container spacing={2}> {/* Upper Container */}
           <Grid item xs={12} sm={12} md={6} lg={6} xl={6}> {/* Left Container for image and social links */}
             <Grid container spacing={2}>

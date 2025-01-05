@@ -8,7 +8,7 @@ import { Paper, Grid, Typography } from "@mui/material";
 
 const Socials = () => {
     return (
-        <Grid container className='contact_list' display="flex" sx={{ marginTop: '0px', paddingBottom:"20px" }} 
+        <Grid container className='contact_list' display="flex" style={{padding:"20px",margin:0}} 
             spacing={3}
             justifyContent="center"
             alignItems="center">

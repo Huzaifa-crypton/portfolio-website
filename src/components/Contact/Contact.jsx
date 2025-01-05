@@ -51,13 +51,13 @@ const Contact = () => {
                         I'd love to hear from you! Feel free to reach out to me with any inquiries
                     </Typography>
                 </Grid>
-                <Grid container display={"flex"} justifyContent={"center"} sx={{ padding: 0, margin: 0, marginTop: 2 }} spacing={3}>
-                    <Grid item justifyContent={"center"} sx={{ padding: 0, margin: 0 }}
+                <Grid container display={"flex"} justifyContent={"center"} style={{ paddingLeft: 0, margin: 0, marginTop: 2 }} spacing={3} rowGap={4} columnGap={5}>
+                    <Grid item justifyContent={"center"} style={{paddingLeft: 0, paddingRight:"20px"}} sx={{  margin: 0 }}
                         xs={11} md={4} >
                         <Socials />
                     </Grid>
-                    <Grid item justifyContent={"center"} sx={{ padding: 0, margin: 0 }}
-                        xs={11} md={4}>
+                    <Grid item justifyContent={"center"} style={{paddingLeft: 0}} sx={{ margin: 0 }}
+                        xs={11} md={5}>
                         <ContactForm />
                     </Grid>
                 </Grid>

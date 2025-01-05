@@ -1,18 +1,15 @@
 footer {
-    margin-left: auto;
-    margin-right: auto;
-    width: 97%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     color: grey;
+    margin: 20px;
     font-size: 0.6rem;
     background-color: rgba(255, 255, 255, 0.107);
     margin-top: 3rem;
     padding: 10px;
     border-radius: 30px 30px 10px 10px;
-    margin-bottom: 40px;
 }
 
 .socialIcons {

@@ -13,31 +13,38 @@ import ListItemButton from '@mui/material/ListItemButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import { Chip, Avatar } from "@mui/material";
+import { toast } from 'material-react-toastify';
 
 const drawerWidth = 240;
-const navItems = { 'Home': "/", "Projects": "#project", 'Blogs': "https://www.educative.io/profile/view/4559692215615488", 'Contact': "#contact" };
+const navItems = { 'Home': "/", "Projects": "#", 'Blogs': "https://www.educative.io/profile/view/4559692215615488", 'Contact': "#contact" };
 
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    console.log("prevState", mobileOpen);
-    setMobileOpen(prevState => !prevState); // Toggle drawer visibility
+    setMobileOpen((prevState) => !prevState); // Toggle drawer visibility
+  };
+
+  const handleLinkClick = (key, link) => {
+    if (link === "#") {
+      toast.dark(`${key} coming soon!`); // Show toast message
+    }
+    handleDrawerToggle(); // Toggle drawer if it's open
   };
 
   const drawer = (
-    <Box // Close the drawer when a link is clicked
+    <Box
       sx={{ textAlign: 'center', overflow: 'hidden', backgroundColor: "rgba(0, 0, 0, 0)" }}
     >
       <List>
         {Object.keys(navItems).map((key) => (
           <ListItem key={key} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => handleDrawerToggle()}>
-              <a
-                className="menu"
-                href={navItems[key]} // Close the drawer on link click
-              >
+            <ListItemButton
+              sx={{ textAlign: 'center' }}
+              onClick={() => handleLinkClick(key, navItems[key])}
+            >
+              <a className="menu" href={navItems[key]}>
                 {key}
               </a>
             </ListItemButton>
@@ -52,28 +59,35 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: 'flex', maxWidth: "100vw", overflow: "hidden", justifyContent: 'start' }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{
-        justifyContent: 'center',
-        height: "70px",
-        backgroundColor: "rgba(255, 255, 255, 0.08)",
-        backdropFilter: "blur(3px)",
-        overflow: "hidden",
-      }}>
-        <Toolbar sx={{
-          display: 'flex',
-          alignItems: 'center',
-          maxWidth: "100vw",
+      <AppBar
+        component="nav"
+        sx={{
+          justifyContent: 'center',
+          height: "70px",
+          backgroundColor: "rgba(255, 255, 255, 0.08)",
+          backdropFilter: "blur(3px)",
           overflow: "hidden",
-        }}>
-          <Box sx={{
+        }}
+      >
+        <Toolbar
+          sx={{
             display: 'flex',
             alignItems: 'center',
             maxWidth: "100vw",
-            flexGrow: 1,
             overflow: "hidden",
-          }}>
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              maxWidth: "100vw",
+              flexGrow: 1,
+              overflow: "hidden",
+            }}
+          >
             <Chip
-              avatar={<Avatar alt="Natacha" src={logo} sx={{ height: '50px', width: "50px" }} />}
+              avatar={<Avatar alt="Huzaifa" src={logo} sx={{ height: '50px', width: "50px" }} />}
               label="Huzaifa"
               variant="outlined"
               href="/"
@@ -87,7 +101,7 @@ function DrawerAppBar(props) {
                 height: "fit-content",
                 fontSize: "24px",
                 fontFamily: "calibri",
-                borderRadius: "50px"
+                borderRadius: "50px",
               }}
             />
           </Box>
@@ -95,17 +109,22 @@ function DrawerAppBar(props) {
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerToggle}
-            sx={{ display: { sm: 'none' } }} // Show only on small screens
+            sx={{ display: { sm: 'none' } }}
           >
             <MenuIcon sx={{ color: 'whitesmoke' }} />
           </IconButton>
           <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: "center", alignItems: "center" }}>
-            {Object.keys(navItems).map((key, index) => (
+            {Object.keys(navItems).map((key) => (
               <a
-                key={index}
+                key={key}
                 className="menu"
                 href={navItems[key]}
-                onClick={() => handleDrawerToggle()} // Close the drawer on link click
+                onClick={(e) => {
+                  if (navItems[key] === "#") {
+                    e.preventDefault(); // Prevent default link action
+                    toast.dark(`${key} coming soon!`); // Show toast message
+                  }
+                }}
               >
                 {key}
               </a>
@@ -117,11 +136,11 @@ function DrawerAppBar(props) {
         <Drawer
           container={container}
           variant="temporary"
-          anchor={"right"}
+          anchor="right"
           open={mobileOpen}
-          onClose={() => handleDrawerToggle()} // Close the drawer on close
+          onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             '& .MuiDrawer-paper': {
@@ -131,7 +150,7 @@ function DrawerAppBar(props) {
               overflow: "auto",
               backgroundColor: "rgba(255, 255, 255, 0.07)",
               backdropFilter: "blur(2px)",
-            }
+            },
           }}
         >
           {drawer}
