@@ -13,7 +13,7 @@ const Socials = () => {
             justifyContent="center"
             alignItems="center">
             {/* Linked in */}
-            <Grid item xs={12} display={'flex'} justifyContent={"center"} alignItems={"center"}>
+            <Grid item xs={12} style={{paddingLeft:0}} display={'flex'} justifyContent={"center"} alignItems={"center"}>
                 <a style={{ textDecoration: 'none' }} href='https://www.linkedin.com/in/muhammad-huzaifa-khan-ab961b228/'>
 
                     <Paper elevation={1}
@@ -55,7 +55,7 @@ const Socials = () => {
                     </Paper>
                 </a>
             </Grid>
-            <Grid item xs={12} display={'flex'} justifyContent={"center"} alignItems={"center"}>
+            <Grid item xs={12} style={{paddingLeft:0}} display={'flex'} justifyContent={"center"} alignItems={"center"}>
                 {/* Gmail */}
                 <a style={{ textDecoration: 'none' }} href="mailto:mhuzaifak.work@gmail.com?subject='Just wanted to leave a hello message'&body='Hey. I am emailing you through your website.'">
                     <Paper elevation={1}
@@ -95,7 +95,7 @@ const Socials = () => {
 
             </Grid>
             {/* Resume */}
-            <Grid item xs={12} display={'flex'} justifyContent={"center"} alignItems={"center"}>
+            <Grid item xs={12} style={{paddingLeft:0}} display={'flex'} justifyContent={"center"} alignItems={"center"}>
                 <a
                     href={"https://drive.google.com/file/d/1uJOnd6izLJhPHiIJhZy3ShU04aEO09Mt/view"}
                     // download="Huzaifa_Khan_Resume.pdf"
@@ -139,7 +139,7 @@ const Socials = () => {
                     </Paper>
                 </a>
             </Grid>
-            <Grid item xs={12} display={'flex'} justifyContent={"center"} alignItems={"center"}>
+            <Grid item xs={12} style={{paddingLeft:0}} display={'flex'} justifyContent={"center"} alignItems={"center"}>
 
                 {/* Whatsapp */}
                 <a href='https://api.whatsapp.com/send/?phone=923431544033' style={{ textDecoration: 'none' }}>
