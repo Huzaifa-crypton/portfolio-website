@@ -16,7 +16,7 @@ import { Chip, Avatar } from "@mui/material";
 import { toast } from 'material-react-toastify';
 
 const drawerWidth = 240;
-const navItems = { 'Home': "/", "Projects": "#", 'Blogs': "https://www.educative.io/profile/view/4559692215615488", 'Contact': "#contact" };
+const navItems = { 'Home': "/#home", "Projects": "#projects", 'Blogs': "https://www.educative.io/profile/view/4559692215615488", 'Contact': "#contact" };
 
 function DrawerAppBar(props) {
   const { window } = props;

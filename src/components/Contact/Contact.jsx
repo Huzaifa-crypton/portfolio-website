@@ -57,7 +57,7 @@ const Contact = () => {
                         <Socials />
                     </Grid>
                     <Grid item justifyContent={"center"} style={{paddingLeft: 0}} sx={{ margin: 0 }}
-                        xs={11} md={5}>
+                        xs={11} md={4}>
                         <ContactForm />
                     </Grid>
                 </Grid>
