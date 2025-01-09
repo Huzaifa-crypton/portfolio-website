@@ -58,12 +58,12 @@ const Footer = () => {
             <Typography variant='h6' color={'white'} fontWeight="bold">Explore</Typography>
             <Typography>About</Typography>
             <Typography>Experience</Typography>
-            <Typography>Projects</Typography>
+            <Typography component={'a'} sx={{ textDecoration: 'none', color:"inherit" }} href="#projects">Projects</Typography>
           </Grid>
           <Grid item md={4} xs={6}>
             <Typography variant='h6' color={'white'} fontWeight="bold">Have an Idea?</Typography>
-            <Typography component={'a'} sx={{ textDecoration: 'none', color:"inherit" }} href="#contact">Contact</Typography>
-            <Typography>Hire Me</Typography>
+            <Typography component={'a'} sx={{ textDecoration: 'none', color:"inherit", display:"block" }} href="#contact">Contact</Typography>
+            <Typography component={'a'} sx={{ textDecoration: 'none', color:"inherit" }} href="#contact">Hire Me</Typography>
           </Grid>
         </Grid>
       </Grid>

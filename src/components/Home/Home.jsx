@@ -75,7 +75,7 @@ const Home = () => {
               Engineering dynamic, user-centric, and scalable solutions.
             </Typography>
           </Grid>
-          <Grid item xs={11} display={"flex"} sx={{ margin: '0px', padding: '0px', maxWidth: "50rem" }} justifyContent={"center"} alignItems={"center"}>
+          <Grid item xs={11} display={"flex"} sx={{ margin: '0px', padding: '0px', maxWidth: "100%" }} justifyContent={"center"} alignItems={"center"}>
             <Button
               variant="contained"
               href='#projects'
@@ -88,6 +88,7 @@ const Home = () => {
                 fontSize: '0.8rem',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 width: "200px",
+                maxWidth:"40vw",
                 color: "whitesmoke",
                 "&:hover": {
                   backgroundColor: "rgb(150, 113, 12)", // Darker shade on hover
@@ -111,6 +112,7 @@ const Home = () => {
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '0.8rem',
                 width: "200px",
+                maxWidth:"40vw",
                 "&:hover": {
                   backgroundColor: "rgb(150, 113, 12)", // Darker shade on hover
                 }
