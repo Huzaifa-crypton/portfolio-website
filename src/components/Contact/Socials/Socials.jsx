@@ -97,7 +97,7 @@ const Socials = () => {
             {/* Resume */}
             <Grid item xs={12} style={{paddingLeft:0}} display={'flex'} justifyContent={"center"} alignItems={"center"}>
                 <a
-                    href={"https://drive.google.com/file/d/1dx9UXQUbMEjr3OJntYvSmdhI4DZIzKWw/view"}
+                    href={"https://drive.google.com/file/d/1rAIvarmtO8Pu0neTmiA2g8brPo3SsbSY/view"}
                     // download="Huzaifa_Khan_Resume.pdf"
                     target="_blank"
                     rel="noreferrer"
